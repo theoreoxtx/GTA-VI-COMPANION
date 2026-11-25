@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#101010">
+<title>GTA VI Companion</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0c0c0c;color:#eee;font-family:Arial,sans-serif}
+header{padding:24px 20px 18px;background:linear-gradient(140deg,#24130e,#101010 70%)}
+.logo{font-size:12px;letter-spacing:4px;color:#ff704b;font-weight:bold}
+h1{font-size:32px;margin:12px 0 5px;letter-spacing:-1px}
+.sub{font-size:12px;color:#999;letter-spacing:1px}
+.status{display:inline-block;margin-top:15px;padding:7px 10px;border:1px solid #633222;border-radius:5px;color:#ff936f;font-size:10px}
+.search{margin:17px 15px 10px;width:calc(100% - 30px);padding:15px;background:#1b1b1b;border:1px solid #303030;border-radius:9px;color:white;font-size:14px;outline:none}
+nav{display:flex;overflow-x:auto;gap:8px;padding:10px 15px;position:sticky;top:0;background:#0c0c0c;z-index:3}
+nav button{flex-shrink:0;background:#202020;color:#aaa;border:1px solid #303030;padding:10px 13px;border-radius:6px;font-size:11px}
+nav button.active{background:#ff653b;color:#111;border-color:#ff653b;font-weight:bold}
+main{padding:8px 15px 35px}
+.hero{padding:20px;background:linear-gradient(135deg,#351b13,#171717);border:1px solid #543023;border-radius:10px;margin-bottom:18px}
+.hero small{color:#ff987b;letter-spacing:2px}
+.hero h2{font-size:24px;margin:10px 0}
+.hero p,.card p{color:#aaa;font-size:13px;line-height:1.6}
+.section-title{font-size:17px;margin:22px 0 12px}
+.card{background:#171717;border:1px solid #292929;padding:16px;border-radius:9px;margin-bottom:10px}
+.card h3{font-size:15px;margin:0 0 9px;color:#ff8969}
+.tag{font-size:9px;color:#ff987b;letter-spacing:1px}
+.card p{margin-bottom:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.tile{background:#191919;border:1px solid #303030;border-radius:8px;padding:15px;min-height:90px}
+.tile b{font-size:13px;display:block;margin-bottom:8px}
+.tile span{font-size:11px;color:#999}
+footer{text-align:center;color:#666;font-size:10px;padding:25px}
+.hide{display:none!important}
+#results:empty{display:none}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">OREO STUDIOS / FIELD GUIDE</div>
+<h1>GTA VI<br>COMPANION</h1>
+<div class="sub">YOUR LEONIDA FIELD MANUAL</div>
+<div class="status">UNOFFICIAL COMMUNITY GUIDE · V1.0</div>
+</header>
+
+<input class="search" id="search" placeholder="⌕  Search tips, characters, locations..." oninput="searchContent()">
+
+<nav id="nav">
+<button class="active" onclick="show('home',this)">HOME</button>
+<button onclick="show('start',this)">START</button>
+<button onclick="show('money',this)">MONEY</button>
+<button onclick="show('vehicles',this)">VEHICLES</button>
+<button onclick="show('wanted',this)">WANTED</button>
+<button onclick="show('characters',this)">CHARACTERS</button>
+<button onclick="show('map',this)">MAP</button>
+<button onclick="show('controls',this)">CONTROLS</button>
+<button onclick="show('tips',this)">TIPS</button>
+<button onclick="show('story',this)">STORY</button>
+<button onclick="show('cheats',this)">CHEATS</button>
+</nav>
+
+<main>
+<section id="home" class="page">
+<div class="hero">
+<small>WELCOME TO LEONIDA</small>
+<h2>Your next adventure<br>starts here.</h2>
+<p>A companion guide for exploring Grand Theft Auto VI. Discover characters, locations, gameplay systems and useful strategies.</p>
+</div>
+<h2 class="section-title">EXPLORE THE GUIDE</h2>
+<div class="grid">
+<div class="tile" onclick="jump('start')"><b>01 / Starting out</b><span>Beginner strategy</span></div>
+<div class="tile" onclick="jump('money')"><b>02 / Money</b><span>Economy and earnings</span></div>
+<div class="tile" onclick="jump('wanted')"><b>03 / Wanted</b><span>Police and stars</span></div>
+<div class="tile" onclick="jump('characters')"><b>04 / Characters</b><span>People of Leonida</span></div>
+<div class="tile" onclick="jump('map')"><b>05 / Locations</b><span>Explore the world</span></div>
+<div class="tile" onclick="jump('tips')"><b>06 / Secrets</b><span>Gameplay tips</span></div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>GUIDE STATUS</h3>
+<p>This is an independent companion app, not an official Rockstar product. Confirmed information is separated from unverified details. Game-specific mechanics must be checked against the released game.</p>
+</div>
+</section>
+
+<section id="start" class="page hide">
+<h2 class="section-title">STARTING YOUR ADVENTURE</h2>
+<div class="card"><h3>01 · Take your time</h3><p>Explore the opening areas and learn the game's basic systems before rushing into major missions.</p></div>
+<div class="card"><h3>02 · Learn the controls</h3><p>Practice movement, driving, camera control and interaction. Check the in-game settings for the actual control layout.</p></div>
+<div class="card"><h3>03 · Explore carefully</h3><p>Visit shops, discover landmarks and pay attention to mission instructions.</p></div>
+<div class="card"><h3>04 · Build your routine</h3><p>Balance story missions, exploration and optional activities. Save your progress when possible.</p></div>
+<div class="card"><h3>05 · The Lucia pickup idea</h3><p>Want a cinematic start? Choose an outfit, prepare your vehicle and explore your home before heading out. This is a roleplay idea, not a verified mission requirement.</p></div>
+</section>
+
+<section id="money" class="page hide">
+<h2 class="section-title">MONEY & ECONOMY</h2>
+<div class="card"><h3>Making money</h3><p>Check mission rewards, available side activities and legitimate in-game opportunities. Compare rewards before spending.</p></div>
+<div class="card"><h3>Smart spending</h3><p>Avoid spending all your available cash immediately. Keep funds available for useful purchases and mission preparation.</p></div>
+<div class="card"><h3>Investment guide</h3><p>Investment mechanics, businesses and their returns should be documented only after they are verified in the released game.</p></div>
+<div class="card"><h3>Money tracker</h3><p>Record your current balance and purchases to understand your progress.</p></div>
+</section>
+
+<section id="vehicles" class="page hide">
+<h2 class="section-title">VEHICLES</h2>
+<div class="card"><h3>Vehicle collection</h3><p>Explore vehicle categories, discover new models and learn which vehicles suit different activities.</p></div>
+<div class="card"><h3>Finding vehicles</h3><p>Explore public areas and observe vehicles around the world. Exact spawn locations should be confirmed in-game.</p></div>
+<div class="card"><h3>Vehicle management</h3><p>Check vehicle storage, customization and insurance mechanics in the actual game before relying on them.</p></div>
+<div class="card"><h3>Driving tip</h3><p>Practice braking before corners, avoid unnecessary collisions and learn how different vehicles handle.</p></div>
+</section>
+
+<section id="wanted" class="page hide">
+<h2 class="section-title">WANTED SYSTEM</h2>
+<div class="card"><h3>Understanding wanted stars</h3><p>Wanted levels traditionally represent the intensity of police attention in GTA games. The exact GTA VI star behavior and escalation rules need in-game verification.</p></div>
+<div class="card"><h3>Police awareness</h3><p>Pay attention to mission objectives, police presence and the game's on-screen instructions.</p></div>
+<div class="card"><h3>Escaping attention</h3><p>Use only verified in-game mechanics. Do not assume that strategies from GTA V work identically in GTA VI.</p></div>
+<div class="card"><h3>Star reference</h3><p>Classic GTA games use a six-star wanted scale. Confirm GTA VI's actual scale and behavior before treating this as its definitive system.</p></div>
+</section>
+
+<section id="characters" class="page hide">
+<h2 class="section-title">CHARACTER DATABASE</h2>
+<div class="card"><h3>LUCIA CAMINOS</h3><span class="tag">PROTAGONIST</span><p>One of GTA VI's two central protagonists. Her story takes place in Leonida alongside Jason.</p><p>Crime status: Protagonist involved in the game's criminal storyline. Exact in-game legal status is not established here.</p></div>
+<div class="card"><h3>JASON DUVAL</h3><span class="tag">PROTAGONIST</span><p>The second central protagonist. His story is closely connected to Lucia and their criminal partnership.</p><p>Crime status: Protagonist involved in the game's criminal storyline. Exact in-game legal status is not established here.</p></div>
+<div class="card"><h3>OTHER CHARACTERS</h3><p>Additional character profiles will be added as their identities, backgrounds and story roles are verified.</p></div>
+</section>
+
+<section id="map" class="page hide">
+<h2 class="section-title">LEONIDA LOCATION DIRECTORY</h2>
+<div class="card"><h3>VICE CITY</h3><p>The iconic urban setting at the heart of GTA VI's world. Explore its districts, streets and landmarks.</p></div>
+<div class="card"><h3>LEONIDA</h3><p>The fictional state inspired by Florida. The game world extends beyond the city into other environments.</p></div>
+<div class="card"><h3>DISCOVERY LOG</h3><p>Use this section to record discovered locations, shops, safehouses, activities and mission destinations.</p></div>
+<div class="card"><h3>LOCATION DATABASE</h3><p>Exact coordinates, interactive map pins and full location lists will be added as verified map data becomes available.</p></div>
+</section>
+
+<section id="controls" class="page hide">
+<h2 class="section-title">CONTROLS</h2>
+<div class="card"><h3>CONTROL GUIDE</h3><p>Controls depend on platform and selected settings. Use the in-game controller settings to check the official bindings.</p></div>
+<div class="card"><h3>PLAYSTATION</h3><p>PS5 controller reference. Exact GTA VI button mappings should be checked in the game.</p></div>
+<div class="card"><h3>XBOX</h3><p>Xbox controller reference. Exact GTA VI button mappings should be checked in the game.</p></div>
+<div class="card"><h3>SETTINGS</h3><p>Experiment with camera sensitivity, aiming sensitivity and control options to find comfortable settings.</p></div>
+</section>
+
+<section id="tips" class="page hide">
+<h2 class="section-title">PLAYER KNOWLEDGE</h2>
+<div class="card"><h3>Exploration</h3><p>Explore side streets and less obvious areas. Not every interesting discovery is connected to a main mission.</p></div>
+<div class="card"><h3>Mission preparation</h3><p>Read mission objectives, check available equipment and make sure you understand the task.</p></div>
+<div class="card"><h3>Save management</h3><p>Check save options and maintain progress regularly.</p></div>
+<div class="card"><h3>Relationship guide</h3><p>Pay attention to story dialogue and character interactions. Specific relationship meters and choices must be verified before assuming they exist.</p></div>
+<div class="card"><h3>Hidden discoveries</h3><p>Record unusual events, collectibles and environmental details. Add confirmed discoveries to your personal guide.</p></div>
+</section>
+
+<section id="story" class="page hide">
+<h2 class="section-title">STORY & ENDINGS</h2>
+<div class="card"><h3>Story overview</h3><p>GTA VI follows Lucia and Jason in Leonida. Their partnership and criminal activities form the central story.</p></div>
+<div class="card"><h3>Ending database</h3><p>Ending count, story branches, important choices and consequences require verification from the released game.</p></div>
+<div class="card"><h3>SPOILER WARNING</h3><p>This guide does not invent ending spoilers. Verified story information can be added in future updates.</p></div>
+</section>
+
+<section id="cheats" class="page hide">
+<h2 class="section-title">CHEAT CODE DATABASE</h2>
+<div class="card"><h3>GTA VI CHEATS</h3><p>No cheat code is listed as confirmed in this starter edition. Do not trust random GTA VI cheat lists without verification.</p></div>
+<div class="card"><h3>CHEAT TRACKER</h3><p>Future entries will include the code, platform, effect and whether using it affects achievements or saves.</p></div>
+</section>
+
+<section id="results" class="page"></section>
+</main>
+<footer>GTA VI COMPANION · VERSION 1.0<br>UNOFFICIAL FAN-MADE PROJECT<br>NOT AFFILIATED WITH ROCKSTAR GAMES</footer>
+
+<script>
+function show(id,btn){
+ document.querySelectorAll('.page').forEach(p=>p.classList.add('hide'));
+ document.getElementById(id).classList.remove('hide');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ document.getElementById('search').value='';
+ document.getElementById('results').innerHTML='';
+ window.scrollTo(0,0);
+}
+function jump(id){
+ const btn=[...document.querySelectorAll('nav button')].find(b=>b.textContent.toLowerCase()===id);
+ show(id,btn);
+}
+function searchContent(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ const result=document.getElementById('results');
+ if(!q){result.innerHTML='';return}
+ document.querySelectorAll('.page').forEach(p=>p.classList.add('hide'));
+ result.classList.remove('hide');
+ result.innerHTML='';
+ document.querySelectorAll('.page:not(#results) .card,.page:not(#results) .tile,.page:not(#results) .hero').forEach(c=>{
+  if(c.innerText.toLowerCase().includes(q)){
+   const clone=c.cloneNode(true);
+   clone.classList.remove('hide');
+   result.appendChild(clone);
+  }
+ });
+ if(!result.children.length)result.innerHTML='<div class="card"><p>No matching guide entries found.</p></div>';
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+}
+</script>
+</body>
+</html>
